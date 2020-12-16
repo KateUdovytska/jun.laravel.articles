@@ -44,7 +44,7 @@
                     @foreach ($articles as $article)
                         <tr>
                             <td class="table-text">
-                                <div><a href="{{route('article.show',  $article->title)}}">{{ $article->title }}</a></div>
+                                <div><a href="{{route('article.show',  $article->id)}}">{{ $article->title }}</a></div>
                             </td>
                             <td>
                                 <form action="{{route('article.delete', $article->id)}}" method="post">
