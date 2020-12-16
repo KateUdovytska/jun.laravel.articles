@@ -33,7 +33,7 @@ Route::group(['prefix' => 'articles'], function () {
         $title = $request->title;
         $description = $request->description;
         //через create ask =========
-//        Article::create([['title'=>$title],['description'=>$description]]);
+//        Article::create([['title'=>$title,'description'=>$description]);
         //========================
         $article = new Article();
         $article->title = $title;
@@ -53,19 +53,11 @@ Route::group(['prefix' => 'articles'], function () {
     /**
      *Вывести текст статьи
      */
-//    Route::get('/{article}', function (Article $article) {
-////        $articles = Article::orderBy('created_at', 'asc')->get(); //TODO
-//            //$articles = Article::get();
-//
-//        $articles = Article:: table('articles')-> where('title', '=', $article)->get();
-////        $articles = [
-////            'title' =>  $article->title,
-////            'description'=>$article->description,
-////        ];
-//
-//        return view('article.article', [
-//            $articles
-//        ]);
-//    })->name('article.show');
+    Route::get('/{article}', function (Article $article) {
+        return view('article.article', [
+            'article' => $article
+        ]);
+
+    })->name('article.show');
 });
 
