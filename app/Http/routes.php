@@ -53,19 +53,19 @@ Route::group(['prefix' => 'articles'], function () {
     /**
      *Вывести текст статьи
      */
-    Route::get('/{article}', function (Article $article) {
-//        $articles = Article::orderBy('created_at', 'asc')->get(); //TODO
-            //$articles = Article::get();
-        $articles = [
-            'title' =>  $article->title,
-            'description'=>$article->description,
-        ];
-
-
-
-        return view('article.article', [
-            'articles' => $articles
-        ]);
-    })->name('article.show');
+//    Route::get('/{article}', function (Article $article) {
+////        $articles = Article::orderBy('created_at', 'asc')->get(); //TODO
+//            //$articles = Article::get();
+//
+//        $articles = Article:: table('articles')-> where('title', '=', $article)->get();
+////        $articles = [
+////            'title' =>  $article->title,
+////            'description'=>$article->description,
+////        ];
+//
+//        return view('article.article', [
+//            $articles
+//        ]);
+//    })->name('article.show');
 });
 
